@@ -45,8 +45,8 @@ async def _log_start_verification(guild: discord.Guild, member: discord.Member, 
 from discord.ext import commands
 
 # Kole branding - overridable via env
-DEFAULT_CALL_BOOKING_LINK = "https://calendly.com/d/cxjh-hz4-47m/ktrades-strategy-call-d?month=2026-02"
-DEFAULT_KOLE_LOGO = "https://cdn.discordapp.com/attachments/1428075084811206716/1468366907898855535/tmp95ayx3_9.png?ex=699831ff&is=6996e07f&hm=783ea7739a07b82261d23a6907a122e194555b2288bbba2145a07d54634b718b"
+DEFAULT_CALL_BOOKING_LINK = "https://calendly.com/d/cxjh-hz4-47m/ktrades-strategy-call-d"
+DEFAULT_KOLE_LOGO = "https://cdn.discordapp.com/attachments/1428075084811206716/1468366907898855535/tmp95ayx3_9.png"
 
 WELCOME_MESSAGE_FILE = "welcome_message.json"
 VERIFICATION_TICKETS_FILE = "verification_tickets.json"
@@ -308,7 +308,7 @@ class Welcome(commands.Cog):
                 color=0xFFFFFF,
             )
             embed.set_footer(text="Welcome to Kole")
-            embed.set_thumbnail(url=logo_url)
+            embed.set_thumbnail(url=DEFAULT_KOLE_LOGO)
             view = get_start_verification_view()
             msg = await get_or_create_welcome_message(welcome_channel, embed, view)
             logging.info("Welcome message persistent: %s", msg.jump_url)

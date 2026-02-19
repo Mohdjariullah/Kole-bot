@@ -15,7 +15,7 @@ from cogs.welcome import (
 
 OWNER_USER_IDS = {890323443252351046, 879714530769391686}
 GUILD_ID = int(os.getenv("GUILD_ID", 0))
-DEFAULT_KOLE_LOGO = "https://cdn.discordapp.com/attachments/1428075084811206716/1468365777131540522/tmp6by9gc_h.png"
+DEFAULT_KOLE_LOGO = "https://cdn.discordapp.com/attachments/1428075084811206716/1468366907898855535/tmp95ayx3_9.png?ex=699831ff&is=6996e07f&hm=783ea7739a07b82261d23a6907a122e194555b2288bbba2145a07d54634b718b"
 
 
 def is_authorized_guild_or_owner(interaction: discord.Interaction) -> bool:

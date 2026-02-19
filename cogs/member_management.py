@@ -69,7 +69,7 @@ class MemberManagement(commands.Cog):
         self.stored_roles: Dict[str, List[int]] = {}  # user_id -> role ids we stripped on join
         self.load_pending_users()
         self.stored_roles = _load_stored_roles()
-        SecureLogger.info("MemberManagement cog initialized (Vito: 1-hour auto-access, no verification)")
+        SecureLogger.info("MemberManagement cog initialized (Kole: 1-hour auto-access, no verification)")
 
     def load_pending_users(self):
         """Load pending users from file"""
@@ -264,18 +264,18 @@ class MemberManagement(commands.Cog):
 
             try:
                 embed = discord.Embed(
-                    title="👋 Welcome to Vito",
+                    title="👋 Welcome to Kole",
                     description=(
                         "You made it this far.\n"
                         "Access isn't automatic and that's on purpose.\n\n"
                         "This server is locked until you verify.\n"
                         "One step. Thats it\n\n"
                         "Hit verify.\n\n"
-                        "Welcome to Vito."
+                        "Welcome to Kole."
                     ),
                     color=0xF00000
                 )
-                embed.set_footer(text="Welcome to Vito")
+                embed.set_footer(text="Welcome to Kole")
                 welcome_channel_id = os.getenv("WELCOME_CHANNEL_ID")
                 if welcome_channel_id:
                     welcome_channel = member.guild.get_channel(int(welcome_channel_id))

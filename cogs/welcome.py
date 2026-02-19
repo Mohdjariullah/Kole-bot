@@ -1,5 +1,5 @@
 """
-Welcome cog for Vito: welcome message + Start Verification button.
+Welcome cog for Kole: welcome message + Start Verification button.
 Start Verification shows an ephemeral message only (no tickets):
 - If user has a paid role (PAID_ROLE_IDS) or member role → "You're already verified."
 - Else → "You'll get free member access automatically within 1 hour of joining."
@@ -44,14 +44,14 @@ async def _log_start_verification(guild: discord.Guild, member: discord.Member, 
         logging.warning("Failed to send Start Verification log: %s", e)
 from discord.ext import commands
 
-# Vito branding - overridable via env
-DEFAULT_CALL_BOOKING_LINK = "https://app.iclosed.io/e/barracudagrowth/vito-s-concepts-intiation-call-d"
-DEFAULT_VITO_LOGO = "https://cdn.discordapp.com/attachments/1428075084811206716/1468365777131540522/tmp6by9gc_h.png"
+# Kole branding - overridable via env
+DEFAULT_CALL_BOOKING_LINK = "https://calendly.com/d/cxjh-hz4-47m/ktrades-strategy-call-d?month=2026-02"
+DEFAULT_KOLE_LOGO = "https://cdn.discordapp.com/attachments/1428075084811206716/1468365777131540522/tmp6by9gc_h.png"
 
 WELCOME_MESSAGE_FILE = "welcome_message.json"
 VERIFICATION_TICKETS_FILE = "verification_tickets.json"
 PENDING_USERS_FILE = "pending_users.json"
-START_VERIFICATION_CUSTOM_ID = "vito_start_verification"
+START_VERIFICATION_CUSTOM_ID = "kole_start_verification"
 
 
 def _cooldown_seconds() -> int:
@@ -204,7 +204,7 @@ class StartVerificationView(discord.ui.View):
                 ),
                 color=discord.Color.blue(),
             )
-            dm_embed.set_footer(text="Vito")
+            dm_embed.set_footer(text="Kole")
             await member.send(embed=dm_embed)
             dm_sent = True
         except discord.Forbidden:
@@ -301,13 +301,13 @@ class Welcome(commands.Cog):
                 logging.error("Welcome channel %s not found", welcome_channel_id)
                 return
 
-            logo_url = os.getenv("VITO_LOGO_URL", DEFAULT_VITO_LOGO)
+            logo_url = os.getenv("KOLE_LOGO_URL", DEFAULT_KOLE_LOGO)
             embed = discord.Embed(
                 title="👋 Welcome to the Server!",
                 description=WELCOME_EMBED_DESCRIPTION,
                 color=0xFFFFFF,
             )
-            embed.set_footer(text="Welcome to Vito")
+            embed.set_footer(text="Welcome to Kole")
             embed.set_thumbnail(url=logo_url)
             view = get_start_verification_view()
             msg = await get_or_create_welcome_message(welcome_channel, embed, view)

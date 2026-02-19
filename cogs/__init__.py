@@ -2,9 +2,9 @@
 import logging
 from discord.ext import commands
 
-# Import all cog modules (verification disabled for Vito - no Calendly)
+# Import all cog modules (verification disabled for Kole - no Calendly)
 from . import member_management
-# from . import verification  # Disabled: no verification system for Vito
+# from . import verification  # Disabled: no verification system for Kole
 from . import welcome
 
 async def setup(bot: commands.Bot) -> None:
@@ -13,6 +13,6 @@ async def setup(bot: commands.Bot) -> None:
     msg = "Loaded cogs.{}"
     await member_management.setup(bot)
     logger.debug(msg.format("member_management"))
-    # await verification.setup(bot)  # Disabled for Vito
+    # await verification.setup(bot)  # Disabled for Kole
     await welcome.setup(bot)
     logger.debug(msg.format("welcome")) 

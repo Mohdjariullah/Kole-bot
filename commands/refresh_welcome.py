@@ -15,7 +15,7 @@ from cogs.welcome import (
 
 OWNER_USER_IDS = {890323443252351046, 879714530769391686}
 GUILD_ID = int(os.getenv("GUILD_ID", 0))
-DEFAULT_VITO_LOGO = "https://cdn.discordapp.com/attachments/1428075084811206716/1468365777131540522/tmp6by9gc_h.png"
+DEFAULT_KOLE_LOGO = "https://cdn.discordapp.com/attachments/1428075084811206716/1468365777131540522/tmp6by9gc_h.png"
 
 
 def is_authorized_guild_or_owner(interaction: discord.Interaction) -> bool:
@@ -78,13 +78,13 @@ async def refresh_welcome(interaction: discord.Interaction) -> None:
         return
 
     try:
-        logo_url = os.getenv("VITO_LOGO_URL", DEFAULT_VITO_LOGO)
+        logo_url = os.getenv("KOLE_LOGO_URL", DEFAULT_KOLE_LOGO)
         embed = discord.Embed(
             title="👋 Welcome to the Server!",
             description=WELCOME_EMBED_DESCRIPTION,
             color=0xFFFFFF,
         )
-        embed.set_footer(text="Welcome to Vito")
+        embed.set_footer(text="Welcome to Kole")
         embed.set_thumbnail(url=logo_url)
         view = get_start_verification_view()
         msg = await get_or_create_welcome_message(

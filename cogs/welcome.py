@@ -45,7 +45,7 @@ async def _log_start_verification(guild: discord.Guild, member: discord.Member, 
 from discord.ext import commands
 
 # Kole branding - overridable via env
-DEFAULT_CALL_BOOKING_LINK = "https://calendly.com/d/cxjh-hz4-47m/ktrades-strategy-call-d"
+DEFAULT_CALL_BOOKING_LINK = "https://app.iclosed.io/e/barracudagrowth/ktrades-strategy-call-d"
 DEFAULT_KOLE_LOGO = "https://cdn.discordapp.com/attachments/1428075084811206716/1468366907898855535/tmp95ayx3_9.png"
 
 WELCOME_MESSAGE_FILE = "welcome_message.json"
@@ -265,10 +265,9 @@ async def get_or_create_welcome_message(
 
 WELCOME_EMBED_DESCRIPTION = """To access the server you'll need to be verified.
 
-New members get **free member access** automatically within 1 hour of joining.
-If you already have a paid role or member role, you're all set.
+Book in your onboarding call to verify you’re human and to get a tour + advice so you can get profitable asap!
 
-Click **Start Verification** below to check your status."""
+Click Start Verification below to check your status."""
 
 
 class Welcome(commands.Cog):
